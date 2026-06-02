@@ -22,3 +22,8 @@ variable "azs" {
 type = list(string)
 
 }
+variable "repository_name" {
+
+type = string
+
+}

@@ -17,3 +17,9 @@ output "public_subnets" {
 value = module.vpc.public_subnets
 
 }
+
+output "ecr_repository_url" {
+
+value = module.ecr.repository_url
+
+}
