@@ -41,3 +41,32 @@ module "security_groups" {
   vpc_cidr = var.vpc_cidr
 
 }
+
+module "eks" {
+
+  source = "../../modules/eks"
+
+
+  environment = var.environment
+
+
+  cluster_role_arn = module.iam.cluster_role_arn
+
+
+  node_role_arn = module.iam.node_role_arn
+
+
+  private_subnets = module.vpc.private_subnets
+
+
+  cluster_security_group_id = module.security_groups.cluster_security_group_id
+
+}
+module "iam" {
+
+  source = "../../modules/iam"
+
+
+  environment = var.environment
+
+}
