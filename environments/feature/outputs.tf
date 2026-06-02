@@ -23,3 +23,15 @@ output "ecr_repository_url" {
 value = module.ecr.repository_url
 
 }
+output "cluster_security_group_id" {
+
+  value = module.security_groups.cluster_security_group_id
+
+}
+
+
+output "node_security_group_id" {
+
+  value = module.security_groups.node_security_group_id
+
+}
